@@ -1,5 +1,5 @@
 CC := gcc
-CFLAGS := -O2 -pipe -g
+CFLAGS := -O2 -pipe -g -Wall -Wextra
 RM := rm -f
 
 rfc863d: rfc863d.o
