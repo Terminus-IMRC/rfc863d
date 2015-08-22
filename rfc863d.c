@@ -11,8 +11,6 @@
 #include <time.h>
 #include <errno.h>
 
-#define SIZE 0x1000
-
 int main()
 {
 	int sock, sock_client;
