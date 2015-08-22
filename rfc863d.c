@@ -49,9 +49,17 @@ int main()
 			fprintf(stderr, "%s:%d: error: accept: %s\n", __FILE__, __LINE__, strerror(errno));
 			exit(EXIT_FAILURE);
 		}
-		close(sock_client);
+		ret = close(sock_client);
+		if (ret == -1) {
+			fprintf(stderr, "%s:%d: error: close: %s\n", __FILE__, __LINE__, strerror(errno));
+			exit(EXIT_FAILURE);
+		}
 	}
-	close(sock);
+	ret = close(sock);
+	if (ret == -1) {
+		fprintf(stderr, "%s:%d: error: close: %s\n", __FILE__, __LINE__, strerror(errno));
+		exit(EXIT_FAILURE);
+	}
 
 	return 0;
 }
